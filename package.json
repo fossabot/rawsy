@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Rawsy is a conjunct of components with like should be, free of big frameworks and reusable an any projects.",
   "main": "index.js",
-  "repository": "git@github.com:rafaelgfirmino/agnostic.git",
+  "repository": "git@github.com:rafaelgfirmino/rawsy.git",
   "author": "Rafael G Firmino <rafaelgfirmino@gmail.com>",
   "license": "MIT",
   "private": true,
