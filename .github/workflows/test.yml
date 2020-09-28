@@ -8,37 +8,6 @@ on:
 
 jobs:
   code:
-    name: Coverage
-    runs-on: ubuntu-latest
-
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-
-      - name: Install dependencies
-        run: yarn install
-
-#      Coverage for components
-
-      - name
-name: Test
-
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-jobs:
-  code:
     name: Test code
     runs-on: ubuntu-latest
 
