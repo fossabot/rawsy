@@ -1,4 +1,7 @@
-module.exports = {
-  preset: '@stencil/core/testing',
+const {name} = require('./package.json')
 
+module.exports = {
+  name: name,
+  preset: '@stencil/core/testing',
+  rootDir: "../..",
 }

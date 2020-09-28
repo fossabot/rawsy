@@ -1,0 +1,38 @@
+name: Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  code:
+    name: Test code
+    runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      COMPONENTS_PATH: ./components
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install dependencies
+        run: yarn install
+#      COVERAGE FOR COMPONENTS:
+      - name: Create Toast coverage
+        working-directory: ${{env.COMPONENTS_PATH}}/toast
+
+      - name: Genrate coverage for @rawsy/toast
+        uses: codecov/codecov-action@v1
+        with:
+          directory: ${{env.COMPONENTS_PATH}}/toast/coverage

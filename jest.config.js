@@ -3,8 +3,9 @@ module.exports = {
     clearMocks: true,
     collectCoverage: true,
     collectCoverageFrom: [
-        'components/**/*.{js,ts,tsx}',
+        'components/**/src/**/*.{js,ts,tsx}',
         '!**/*-test.{js,ts,tsx}',
+        '!**/*-spec.{js,ts,tsx}',
     ],
     coverageReporters: ['json', 'lcov'],
     transform: {
